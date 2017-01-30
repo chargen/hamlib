@@ -28,6 +28,6 @@ env:
       - CC="/usr/bin/gcc -L/usr/local/lib -llua" && ./configure --with-xml-support --with-lua-binding
 
 script:
-  - autogen.sh
+  - ./autogen.sh
   - make
   - make install
