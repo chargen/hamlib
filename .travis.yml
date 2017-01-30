@@ -25,7 +25,6 @@ before_install:
 
 env:
   matrix:
-      - LUA=lua5.3
       - CC="/usr/bin/gcc -L/usr/local/lib -llua" && ./configure --with-xml-support --with-lua-binding
 
 script:
