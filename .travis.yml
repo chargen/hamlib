@@ -17,7 +17,7 @@ addons:
       - autoconf
       - libtool
       - swig
-      - lua5.3
+      - lua5.2
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
