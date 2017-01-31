@@ -31,5 +31,6 @@ env:
       - CC="/usr/bin/gcc -L/usr/local/lib -llua" && ./configure --with-xml-support --with-lua-binding
 
 script:
+  - mkdir /usr/local/include/hamlib
   - ./autogen.sh
   - make && make install
