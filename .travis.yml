@@ -27,4 +27,7 @@ env:
   matrix:
       - CC="/usr/bin/gcc -L/usr/local/lib -llua" && ./configure --with-xml-support --with-lua-binding
 
-script: cd hamlib && ./configure && make && make install
+script:
+  - ls -l
+  - cd hamlib
+  - ./configure && make && make install
