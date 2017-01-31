@@ -18,8 +18,6 @@ addons:
       - libtool
       - swig
       - lua5.2
-      
-install: make get-deps
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
