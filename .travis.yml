@@ -29,5 +29,5 @@ env:
 
 script:
   - ls -l
-  - cd hamlib
-  - ./configure && make && make install
+  - ./autogen.sh
+  - make && make install
