@@ -13,6 +13,7 @@ addons:
     packages:
       - automake
       - autoconf
+      - texinfo
       - libtool
       - swig
       - lua5.2
@@ -21,13 +22,12 @@ install: true
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install automake autoconf libtool swig lua; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install automake autoconf texinfo libtool swig lua; fi
 
 env:
   matrix:
       - CC="/usr/bin/gcc -L/usr/local/lib -llua" && ./configure --with-xml-support --with-lua-binding
 
 script:
-  - ls -l
   - ./autogen.sh
   - make && make install
