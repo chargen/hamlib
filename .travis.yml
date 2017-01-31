@@ -18,6 +18,8 @@ addons:
       - libtool
       - swig
       - lua5.2
+      
+install: make get-deps
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
@@ -28,6 +30,4 @@ env:
       - CC="/usr/bin/gcc -L/usr/local/lib -llua" && ./configure --with-xml-support --with-lua-binding
 
 script:
-  - cd hamlib
-  - ./configure && make
-  - make install
+  - cd hamlib && ./configure && make && make install
